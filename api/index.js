@@ -4,13 +4,12 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const { mongo_db_connect } = require('./Utils/MongoConnect.js');
-const errorHandler = require('./Middlewares/ErrorHandler.js');
-const UserRoute = require('./Routes/UserRoute.js');
+const { mongo_db_connect } = require('../Utils/MongoConnect.js');
+const errorHandler = require('../Middlewares/ErrorHandler.js');
+const UserRoute = require('../Routes/UserRoute.js');
 
 
-const port = process.env.port || process.env.SERVER_PORT;
-const app = express();
+const port = process.env.PORT || process.env.SERVER_PORT;
 
 // Middleware setup
 app.use(express.json());
