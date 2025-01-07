@@ -27,7 +27,7 @@ app.options('*', cors());
 
 // Routes
 app.get('/', (req, res) => {
-    console.log("returning hello world" + get_db())
+    console.log("returning hello world " + get_db())
     res.send('Hello World!');
 });
 app.use('/api/v1/user', UserRoute);
@@ -58,7 +58,8 @@ const startServer =async() => {
     }
 };
 
-//first start the server then mongodb 
+//first start the server then mongodb
+/*
 const startServer2 =() => {
     try {
         console.log('Connecting to the database...');
@@ -73,7 +74,7 @@ const startServer2 =() => {
             process.exit(1); // Exit the process with failure
         }
     };
-
+*/
 // Initialize
 startServer();
 
