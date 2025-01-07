@@ -27,6 +27,7 @@ app.options('*', cors());
 
 // Routes
 app.get('/', (req, res) => {
+    console.log("Port is:"+port)
     res.send('Hello World!');
 });
 app.use('/api/v1/user', UserRoute);
