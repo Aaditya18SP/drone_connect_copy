@@ -75,6 +75,6 @@ const startServer2 =() => {
     };
 
 // Initialize
-startServer2();
+startServer();
 
 module.exports = app;
