@@ -27,7 +27,7 @@ app.options('*', cors());
 
 // Routes
 app.get('/', (req, res) => {
-    console.log("returning hello world")
+    console.log("returning hello world" + get_db())
     res.send('Hello World!');
 });
 app.use('/api/v1/user', UserRoute);
