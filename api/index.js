@@ -67,6 +67,7 @@ const startServer2 =() => {
             console.log(`Server is running on port: ${port}`);
             mongo_db_connect().then(()=>{console.log('Connected to the database successfully.');
             })
+        })
         }catch(error) {
             console.error('Failed to connect to the database:', error.message);
             process.exit(1); // Exit the process with failure
