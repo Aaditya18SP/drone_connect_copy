@@ -37,7 +37,7 @@ app.use(errorHandler);
 // Start server only if DB is connected
 //const startServer =() => {
 
-    try {
+    //try {
 
         app.listen(port, () => {
             console.log(`Server is running on port: ${port}`);
@@ -47,10 +47,10 @@ app.use(errorHandler);
                 console.log('Connected to the database successfully.');
             }*/
         });
-    } catch (error) {
-        console.error('Failed to connect to the database:', error.message);
-        process.exit(1); // Exit the process with failure
-    }
+   // } catch (error) {
+    //    console.error('Failed to connect to the database:', error.message);
+     //   process.exit(1); // Exit the process with failure
+   // }
 //};
 
 // Initialize
