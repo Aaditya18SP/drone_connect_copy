@@ -11,6 +11,7 @@ const UserRoute = require('./Routes/UserRoute.js');
 
 const port = process.env.PORT || process.env.SERVER_PORT;
 
+const app = express()
 // Middleware setup
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
