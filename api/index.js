@@ -44,7 +44,7 @@ app.use(errorHandler);
         app.listen(port, async() => {
             console.log(`Server is running on port: ${port}`);
             console.log('Connecting to the database...');
-            mongo_db_connect().then(()=>console.log("connected to database"))
+            await mongo_db_connect()
            /* const db = await mongo_db_connect();
             if (db) {
                 console.log('Connected to the database successfully.');
