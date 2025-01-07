@@ -51,6 +51,10 @@ const startServer =() => {
 };
 
 // Initialize
+try{
 startServer();
+}catch(err){
+console.log("start server error")
+}
 
 module.exports = app;
