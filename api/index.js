@@ -39,18 +39,22 @@ app.use('/api/v1/user', UserRoute);
 app.use(errorHandler);
 
 // Start server only if DB is connected
-const startServer =() => {
+const startServer =async() => {
     try {
+        console.log('Connecting to the database...');
+        const db = await mongo_db_connect();
+        if(db){
+            console.log('Connected to the database successfully.');
+            app.listen(port, () => {
+                console.log(`Server is running on port: ${port}`);
+            })
+        }else{
 
-        app.listen(port, async() => {
-            console.log(`Server is running on port: ${port}`);
-            console.log('Connecting to the database...');
-            await mongo_db_connect()
-           /* const db = await mongo_db_connect();
-            if (db) {
-                console.log('Connected to the database successfully.');
-            }*/
-        });
+            console.log("Database connection attempt failed")
+        }
+        /* const db = await mongo_db_connect();
+        if (db) {
+        }*/
     } catch (error) {
         console.error('Failed to connect to the database:', error.message);
         process.exit(1); // Exit the process with failure
