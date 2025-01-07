@@ -26,9 +26,11 @@ app.use(cors({
 app.options('*', cors());
 
 // Routes
-app.get('/', (req, res) => {
+app.get('/', async(req, res) => {
     console.log("Port is:"+port)
     console.log(get_db())
+    let db = await mongo_db_connect()
+    console.log(db)
     res.send('Hello World!');
 });
 app.use('/api/v1/user', UserRoute);
