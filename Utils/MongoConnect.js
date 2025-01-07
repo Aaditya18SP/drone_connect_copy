@@ -2,7 +2,7 @@ const {MongoClient}= require("mongodb")
 const connString = process.env.MONGO_CONN_STRING;
 const client = new MongoClient(connString)
 
-let db;
+let db = "mongo";
 async function mongo_db_connect(){
     let conn;
     try{
