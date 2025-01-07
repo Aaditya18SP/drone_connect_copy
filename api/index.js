@@ -54,4 +54,4 @@ const startServer =() => {
 // Initialize
 startServer();
 
-module.exports = app;
+module.exports = startServer;
