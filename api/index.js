@@ -36,14 +36,16 @@ app.use(errorHandler);
 
 // Start server only if DB is connected
 //const startServer =() => {
+
     try {
+
         app.listen(port, async() => {
             console.log(`Server is running on port: ${port}`);
             console.log('Connecting to the database...');
-            const db = await mongo_db_connect();
+           /* const db = await mongo_db_connect();
             if (db) {
                 console.log('Connected to the database successfully.');
-            }
+            }*/
         });
     } catch (error) {
         console.error('Failed to connect to the database:', error.message);
