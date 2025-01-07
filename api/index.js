@@ -39,7 +39,7 @@ app.use(errorHandler);
 
     try {
 
-        app.listen(port, async() => {
+        app.listen(port, () => {
             console.log(`Server is running on port: ${port}`);
             console.log('Connecting to the database...');
            /* const db = await mongo_db_connect();
