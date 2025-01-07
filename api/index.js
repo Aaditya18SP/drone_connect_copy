@@ -39,8 +39,7 @@ app.use('/api/v1/user', UserRoute);
 app.use(errorHandler);
 
 // Start server only if DB is connected
-//const startServer =() => {
-
+const startServer =() => {
     try {
 
         app.listen(port, async() => {
@@ -56,9 +55,9 @@ app.use(errorHandler);
         console.error('Failed to connect to the database:', error.message);
         process.exit(1); // Exit the process with failure
     }
-//};
+};
 
 // Initialize
-//startServer();
+startServer();
 
 module.exports = app;
